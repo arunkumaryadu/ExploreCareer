@@ -1,0 +1,66 @@
+
+
+
+name                                      return                                  parameter
+
+ForgotPassword                Status: 0- internal fault,1-changed          objUsers[id,new password]
+
+
+CareerIn                      List<Field >                                    Int[Stream.id]
+
+CareerInOther                 List< Field >                                    String[other]
+
+
+
+
+
+Class Stream{
+String Scope
+String Link
+String StreamName
+Subject obj[]
+}
+Class Subject{
+String name
+String Details
+}
+Field {
+String FieldName,
+String Link
+String Details1
+String Details2
+Stream obj }
+Branch{
+String Name
+String Details1
+String Details2
+String FieldName
+}
+EntranceExam{
+String Name
+String Details
+String Link
+Date ExamDate
+String FieldName
+}
+Question{
+String  Askeremail
+String replierEmail
+String AskerName
+
+String Question,
+String relatedAreaOfQuestion
+String Answer
+Date date
+}
+
+Notice
+{ 
+String  relatedAreaOfNotice
+String heading
+String content
+String link
+Date date
+}
+
+
