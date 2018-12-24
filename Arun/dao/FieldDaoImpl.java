@@ -7,13 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.Field;
-import model.Stream;
-import model.Subject;
-import service.StreamInterface;
+import service.FieldInterface;
+
 @Repository
-public class StreamDaoImpl implements StreamInterface{
+public class FieldDaoImpl implements FieldInterface{
 
-
+	
 	 @Autowired
 	 private SessionFactory sessionFactory;
 
@@ -22,25 +21,23 @@ public class StreamDaoImpl implements StreamInterface{
 		 }
 
 	public boolean checkConfiguration() {
-		// TODO Auto-generated method stub
+		
 		return sessionFactory!=null;
 	}
 
-	public int addStream(Stream stream) {
-		
+	public int addField(Field field) {
 		Session y =sessionFactory.openSession();
 		Transaction t = y.beginTransaction();
 		try {
-			Stream s1=(Stream) y.get(Stream.class, stream.getStreamName());
+			Field s1=(Field) y.get(Field.class, field.getFieldName());
 			if(s1!=null) {
 				y.close();
 				return 2;
 				}
-			y.save(stream);
+			y.save(field);
 			t.commit();			
 		}
 		catch(Exception e) {
-		//	e.printStackTrace();
 			return 0;
 		
 		}
@@ -49,56 +46,54 @@ public class StreamDaoImpl implements StreamInterface{
 		}
 
 		return 1;
-		}
+		
+	}
 
-	public int updateStream(Stream stream) {
+	public int updateField(Field field) {
 		Session y =sessionFactory.openSession();
 		Transaction t = y.beginTransaction();
 	
-		Stream s1=(Stream) y.get(Stream.class, stream.getStreamName());
+		Field s1=(Field) y.get(Field.class, field.getFieldName());
 		if(s1==null) {
 			y.close();
 			return 2;
 			}
 		try {
-			s1.setLink(stream.getLink());
-			s1.setScope(stream.getScope());
-			s1.setSubject(stream.getSubject());
-			s1.setFields(stream.getFields());
-			
+			s1.setDetails1(field.getDetails1());
+			s1.setDetails2(field.getDetails2());
+			s1.setLink(field.getLink());
+			s1.setStreams(field.getStreams());
 			y.update(s1);
 			t.commit();
 		} catch (Exception e) {
 			return 0;
-		}	
-		return 1;
+		}
+		finally {
+			y.close();
 		}
 
-	public int deleteStream(Stream stream) {
+		return 1;
+	}
+
+	public int deleteField(Field field) {
 		Session y =sessionFactory.openSession();
 		Transaction t = y.beginTransaction();
-		Stream s1=(Stream) y.get(Stream.class, stream.getStreamName());
-			if(s1==null) {
-				y.close();
-				return 2;
-				}
-				
+		Field s1=(Field) y.get(Field.class, field.getFieldName());
+		if(s1==null) {
+			y.close();
+			return 2;
+			}
 			y.delete(s1);
 			t.commit();				
 			y.close();		
 		  return 1;
 	}
 
-	public Stream showStream(Stream stream) {
+	public Field showField(Field field) {
 		Session y =sessionFactory.openSession();
 		Transaction t = y.beginTransaction();
-		Stream s1=(Stream) y.get(Stream.class, stream.getStreamName());	
+		Field s1=(Field) y.get(Field.class, field.getFieldName());	
 		y.close();
-		return s1;
+		return s1;	
 	}
-
-	
-
-	
-
 }
