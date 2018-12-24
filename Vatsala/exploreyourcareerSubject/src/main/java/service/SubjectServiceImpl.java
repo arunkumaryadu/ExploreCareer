@@ -48,6 +48,16 @@ public class SubjectServiceImpl {
 		 subject.setName("Biology");
 		 subject.setDetails("Biology is the science of life that involves the study of living organisms, including their chemical compositions, physical compositions, developments, functions, and evolution.Some branches of biology are Botany,Zoology,Biochemistry,Ecology,Genetics,Evolutionary Biology,Cellular Biology");
 		 subjectDao.saveOrUpdate(subject);
+		 subject.setName("Accounts");
+		 subject.setDetails("The Accountancy syllabus  gives students a firm foundation in basic accounting principles and methodology and also acquaints them with the changes taking place in the presentation and analysis of accounting information, keeping in view the development of accounting standards and use of computers.");
+		 subjectDao.saveOrUpdate(subject);
+		 subject.setName("Business Studies");
+		 subject.setDetails("Business is a dynamic process that brings together technology, natural resources and human initiative in a constantly changing global environment. Business Studies  develops a good understanding of the principles and practices bearing in business (trade and industry) as well as their relationship with the society.\");");
+		 subjectDao.saveOrUpdate(subject);
+		 subject.setName("Economics");
+		 subject.setDetails("Indian Economic Development and Statistics these two are major divisions which you are going to study here. Knowing about the country’s economy rate and it’s developments over the years. You will also come across formulas, charts, theory, graphs in economics.");
+		 subjectDao.saveOrUpdate(subject);
+		 
 	}
 
 }
