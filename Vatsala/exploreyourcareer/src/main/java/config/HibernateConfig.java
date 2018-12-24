@@ -45,7 +45,7 @@ public class HibernateConfig {
 	  properties.put("hibernate.format_sql", "false");
 	  properties.put("hibernate.requireSSL", "true");
 	  properties.put("hibernate.verifyServerCertificate", "false");
-	  properties.put("hibernate.hbm2ddl.auto", "create");
+	  properties.put("hibernate.hbm2ddl.auto", "update");
 	  
 	  return properties;
 	 }
