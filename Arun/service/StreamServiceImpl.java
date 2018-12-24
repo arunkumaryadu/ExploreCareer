@@ -20,41 +20,6 @@ public class StreamServiceImpl implements StreamInterface{
 		return objStreamDaoImol.checkConfiguration();
 	}
 
-	
-public static void main(String[] args) {
-	
-	 AnnotationConfigApplicationContext contex=new AnnotationConfigApplicationContext(HibernateConfig.class);
-	 objStreamDaoImol=contex.getBean(StreamDaoImpl.class);
-
-	 
-	 
-	Subject subject=new Subject();
-	subject.setName("Science");
-	subject.setDetails("i hate this subject");
-	
-	Subject subject1=new Subject();
-	subject1.setName("Scdience1");
-	subject1.setDetails("i hate tdffhis subject");
-	
-    SubjectDaoImpl ssimpl=contex.getBean(SubjectDaoImpl.class);
-	
-	ssimpl.addSubject(subject);
-	ssimpl.addSubject(subject1);
-	Stream st=new Stream();
-		st.getSubject().add(subject);
-	st.getSubject().add(subject1);
-	
-	st.setStreamName("Maths");
-	st.setLink("Mathslink");
-	st.setScope("bahut Scope hai");
-	
-	System.out.println(objStreamDaoImol.checkConfiguration());
-	System.out.println(objStreamDaoImol.addStream(st));
-	//System.out.println(objStreamDaoImol.updateStream(st));
-	//System.out.println(objStreamDaoImol.deleteStream(st));
-	//System.out.println(objStreamDaoImol.showStream(st));
-}
-
 
 public int addStream(Stream stream) {
 	// TODO Auto-generated method stub
@@ -74,8 +39,45 @@ public int deleteStream(Stream stream) {
 }
 
 
-public Subject showStream(Stream stream) {
+public Stream showStream(Stream stream) {
 	// TODO Auto-generated method stub
 	return objStreamDaoImol.showStream(stream);
 }
+
+
+public static void main(String[] args) {
+
+ AnnotationConfigApplicationContext contex=new AnnotationConfigApplicationContext(HibernateConfig.class);
+ objStreamDaoImol=contex.getBean(StreamDaoImpl.class);
+
+ 
+ 
+Subject subject=new Subject();
+subject.setName("Science");
+subject.setDetails("i hate this subject");
+
+Subject subject1=new Subject();
+subject1.setName("Scdience1");
+subject1.setDetails("i hate tdffhis subject");
+
+SubjectDaoImpl ssimpl=contex.getBean(SubjectDaoImpl.class);
+
+ssimpl.addSubject(subject);
+ssimpl.addSubject(subject1);
+Stream st=new Stream();
+	st.getSubject().add(subject);
+st.getSubject().add(subject1);
+
+st.setStreamName("Maths");
+st.setLink("Mathslink");
+st.setScope("bahut Scope hai");
+
+System.out.println(objStreamDaoImol.checkConfiguration());
+System.out.println(objStreamDaoImol.addStream(st));
+//System.out.println(objStreamDaoImol.updateStream(st));
+//System.out.println(objStreamDaoImol.deleteStream(st));
+//System.out.println(objStreamDaoImol.showStream(st));
+}
+
+
 }

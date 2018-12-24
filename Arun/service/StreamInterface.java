@@ -8,5 +8,5 @@ public interface StreamInterface {
 	public int addStream(Stream stream);
 	public int updateStream(Stream stream);
 	public int deleteStream(Stream stream);
-	public Subject showStream(Stream stream);
+	public Stream showStream(Stream stream);
 }
