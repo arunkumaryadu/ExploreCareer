@@ -54,7 +54,7 @@ public class QuestionService {
 		 Q.setAskerName("afsdvaaf");
 		 //Q.setDate(date);
 		 
-		 QuestionDao.AskQuestion(Q);
+		int a= QuestionDao.AskQuestion(Q);
 		
 		 List l= (List) QuestionDao.displayMyQuestions("aaa@gmail.com") ;
 		 
