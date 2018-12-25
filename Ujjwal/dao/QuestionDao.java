@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 //import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -15,8 +16,9 @@ import org.springframework.stereotype.Repository;
 
 import javassist.bytecode.Descriptor.Iterator;
 import model.Question;
+import service.QuestionInterface;
 @Repository
-public class QuestionDao {
+public class QuestionDao  implements QuestionInterface{
 
 	 @Autowired
 	 private SessionFactory sessionFactory;
@@ -33,9 +35,11 @@ public class QuestionDao {
 	 }
 
 
-	public int AskQuestion(Question q) {
+	public int askQuestion(Question q) {
 		Session y =sessionFactory.openSession();
+		System.out.println(2);
 		Transaction t = y.beginTransaction();
+		System.out.println(3);
 		System.out.println(q.getQuestion()+"   "+q.getRelatedAreaOfQuestion());
 		
 		try {
@@ -48,7 +52,6 @@ public class QuestionDao {
 			return 0;
 		}
 		}
-
 
 	public List displayMyQuestions(String a) {
 		Session y =sessionFactory.openSession();
@@ -99,6 +102,10 @@ public class QuestionDao {
 		List results = query.list();
 		return results;*/
 	}
+
+
+
+	
 
 
 
