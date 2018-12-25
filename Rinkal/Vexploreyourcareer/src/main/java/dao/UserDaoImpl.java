@@ -64,7 +64,7 @@ public class UserDaoImpl implements UserInterFace
 			 if(User1!=null && (User1.getPassword().equals(user.getPassword())))
 			 {	
 				 
-				 return 2;
+				 return 1;
 			 }
 			 
 		}
@@ -77,7 +77,7 @@ public class UserDaoImpl implements UserInterFace
 			{
 			session.close();
 			}
-			return 1;
+			return 2;
 	}
 
 	public int updateUser(Users user) {
@@ -85,17 +85,18 @@ public class UserDaoImpl implements UserInterFace
 		Transaction trans=session.beginTransaction();
 		try {
 			Users User1 = (Users) session.get(Users.class,user.getEmailid());
-			 if(User1!=null)
+			 if(User1==null)
 				 return 2;
 			 
 			 User1.setUsername(user.getUsername());
 			 User1.setPhonenumber(user.getPhonenumber());
 			 User1.setStandard(user.getStandard());
 			 session.update(User1);
+		
 		 trans.commit();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 			return 0;
 		}
 		finally
@@ -111,7 +112,7 @@ public class UserDaoImpl implements UserInterFace
 		Transaction trans=session.beginTransaction();
 		try
 		{Users User1=(Users) session.get(Users.class,user.getEmailid());
-		if(User1!=null)
+		if(User1==null)
 			 return 2;
 		session.delete(User1);
 		trans.commit();
