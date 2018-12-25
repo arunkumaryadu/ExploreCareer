@@ -38,12 +38,16 @@ public class QuestionDao {
 		Transaction t = y.beginTransaction();
 		System.out.println(q.getQuestion()+"   "+q.getRelatedAreaOfQuestion());
 		
-		y.save(q);
-		t.commit();
-		y.close();
-		return 0;
-	}
-
+		try {
+			y.save(q);
+			t.commit();
+			y.close();
+			return 1;
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			return 0;
+		}
+		}
 
 
 	public List displayMyQuestions(String a) {
