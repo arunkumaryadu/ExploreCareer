@@ -14,14 +14,14 @@ import dao.QuestionDao;
 import model.Question;
 
 @Service
-public class QuestionService {
+public class QuestionService implements QuestionInterface {
 	
 	@Autowired
 	static QuestionDao QuestionDao;
 	
 	
 	public int  askQuestion(Question Q) {
-		 return QuestionDao.AskQuestion(Q);
+		 return QuestionDao.askQuestion(Q);
 		
 		
 	} 
@@ -47,14 +47,17 @@ public class QuestionService {
 		AnnotationConfigApplicationContext contex=new AnnotationConfigApplicationContext(HibernateConfig.class);
 		 QuestionDao=contex.getBean(QuestionDao.class);
 		 QuestionDao.f1();
+		 System.out.println(1);
+		 //ASK QUESTION
 		 Question Q=new Question();
 		 Q.setQuestion("what is qql");
 		 Q.setRelatedAreaOfQuestion("qlqlql:");
 		 Q.setAskerEmail("adrg@gmail.com");
 		 Q.setAskerName("afsdvaaf");
 		 //Q.setDate(date);
+		 int a=QuestionDao.askQuestion(Q);
 		 
-		int a= QuestionDao.AskQuestion(Q);
+		 
 		
 		 List l= (List) QuestionDao.displayMyQuestions("aaa@gmail.com") ;
 		 
