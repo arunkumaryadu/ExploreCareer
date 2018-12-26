@@ -2,10 +2,12 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -34,7 +36,16 @@ public class EntranceExamDaoImpl implements EntranceExamInterface {
 		 List list=qry.list();
 		return list;
 	}
-
+	public List<EntranceExam> getExamListByFieldName(String fieldName) {
+		// TODO Auto-generated method stub
+		Session session =sessionFactory.openSession();
+		Transaction trans=session.beginTransaction();
+		Criteria criteria = session.createCriteria(EntranceExam.class);
+		criteria.add(Restrictions.eq("fieldName",fieldName));
+		List<EntranceExam>list= (List<EntranceExam>) criteria.list();
+		session.close();
+		return list;
+	}
 	public int addExam(EntranceExam exam) {
 		// TODO Auto-generated method stub
 		Session session =sessionFactory.openSession();
@@ -63,8 +74,11 @@ public class EntranceExamDaoImpl implements EntranceExamInterface {
 		Transaction trans=session.beginTransaction();
 		try {
 			EntranceExam exam1= (EntranceExam) session.get(EntranceExam.class, exam.getName());
-		 if(exam1==null)
+			if(exam1==null)
+			 {
+			 session.close();
 			 return 2;
+			 }
 		  exam1.setDetails(exam.getDetails());
 		  exam1.setExamDate(exam.getExamDate());
 		  exam1.setFieldName(exam.getFieldName());
@@ -89,8 +103,11 @@ public class EntranceExamDaoImpl implements EntranceExamInterface {
 		Transaction trans=session.beginTransaction();
 		try {
 			EntranceExam exam1= (EntranceExam) session.get(EntranceExam.class, exam.getName());
-		 if(exam1==null)
+			if(exam1==null)
+			 {
+			 session.close();
 			 return 2;
+			 }
 		 session.delete(exam1);
 		   trans.commit();}
 		 catch (Exception e) {
@@ -111,7 +128,9 @@ public class EntranceExamDaoImpl implements EntranceExamInterface {
 		Transaction trans=session.beginTransaction();
 		
 			EntranceExam exam1= (EntranceExam) session.get(EntranceExam.class, name);
+			session.close();
 	return exam1;
 
 }
+	
 }
