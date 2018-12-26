@@ -18,33 +18,39 @@ public class EntranceExamServiceimpl  implements EntranceExamInterface{
 	static EntranceExamDaoImpl examDao;
 	public boolean checkConfiguration() {
 		// TODO Auto-generated method stub
-		return false;
+		return examDao.checkConfiguration();
 	}
 
 	public List<EntranceExam> getExamList() {
 		// TODO Auto-generated method stub
-		return null;
+		return examDao.getExamList();
 	}
 
 	public int addExam(EntranceExam exam) {
 		// TODO Auto-generated method stub
-		return 0;
+		return examDao.addExam(exam);
 	}
 
 	public int updateExam(EntranceExam exam) {
 		// TODO Auto-generated method stub
-		return 0;
+		return examDao.updateExam(exam);
 	}
 
 	public int deleteExam(EntranceExam exam) {
 		// TODO Auto-generated method stub
-		return 0;
+		return examDao.deleteExam(exam);
 	}
 
 	public EntranceExam findExamByName(String name) {
 		// TODO Auto-generated method stub
-		return null;
+		return examDao.findExamByName(name);
 	}
+	public List<EntranceExam> getExamListByFieldName(String fieldName) {
+		// TODO Auto-generated method stub
+		return examDao.getExamListByFieldName(fieldName);
+	}
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 AnnotationConfigApplicationContext contex=new AnnotationConfigApplicationContext(HibernateConfig.class);
@@ -54,10 +60,28 @@ public class EntranceExamServiceimpl  implements EntranceExamInterface{
 		 exam.setName("A");
 		 exam.setDetails("A EXAM???");
 		 exam.setFieldName("Engg");
-		
-		 examDao.addExam(exam);
 		 exam.setLink("exam.com");
-		 examDao.updateExam(exam);
+		 examDao.addExam(exam);
+		 EntranceExam exam1 = new EntranceExam();
+		 exam1.setExamDate(new Date());
+		 exam1.setName("B");
+		 exam1.setDetails("B EXAM???");
+		 exam1.setFieldName("Med");
+		 exam1.setLink("exam.com");
+		 examDao.addExam(exam1);
+		 EntranceExam exam2 = new EntranceExam();
+		 exam2.setExamDate(new Date());
+		 exam2.setName("C");
+		 exam2.setDetails("C EXAM???");
+		 exam2.setFieldName("Med");
+		 exam2.setLink("exam.com");
+		 examDao.addExam(exam2);
+		 List<EntranceExam>l = examDao.getExamListByFieldName("Med");
+		 for (EntranceExam entranceExam : l) {
+			System.out.println(entranceExam);
+		}
+		 
+		/* examDao.updateExam(exam);
 		// examDao.deleteExam(exam);
 		 List<EntranceExam>l = examDao.getExamList();
 		 for (EntranceExam entranceExam : l) {
@@ -65,8 +89,11 @@ public class EntranceExamServiceimpl  implements EntranceExamInterface{
 		}
 		
 		 EntranceExam exam1 =examDao.findExamByName("A");
-		 System.out.println(exam1);
+		 System.out.println(exam1);*/
 		 
 		 
 	}
+
+	
+	
 }
