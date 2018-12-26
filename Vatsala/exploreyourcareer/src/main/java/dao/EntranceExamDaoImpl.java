@@ -2,11 +2,18 @@ package dao;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,15 +34,18 @@ public class EntranceExamDaoImpl implements EntranceExamInterface {
 		// TODO Auto-generated method stub
 		return sessionFactory!=null;
 	}
-
+	 
 	public List<EntranceExam> getExamList() {
 		// TODO Auto-generated method stub
 		Session session =sessionFactory.openSession();
 		Transaction trans=session.beginTransaction();
-		 Query qry = session.createQuery("from  EntranceExam");
-		 List list=qry.list();
+		Criteria criteria = session.createCriteria(EntranceExam.class);
+		List<EntranceExam>list= (List<EntranceExam>) criteria.list();
+		session.close();
 		return list;
 	}
+		
+		 
 	public List<EntranceExam> getExamListByFieldName(String fieldName) {
 		// TODO Auto-generated method stub
 		Session session =sessionFactory.openSession();

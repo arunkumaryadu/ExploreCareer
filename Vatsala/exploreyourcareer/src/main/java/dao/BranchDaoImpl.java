@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.Branch;
+import model.EntranceExam;
 import service.BranchInterface;
 @Repository
 public class BranchDaoImpl implements BranchInterface {
@@ -29,9 +31,11 @@ public class BranchDaoImpl implements BranchInterface {
 		// TODO Auto-generated method stub
 		Session session =sessionFactory.openSession();
 		Transaction trans=session.beginTransaction();
-		 Query qry = session.createQuery("from  Branch");
-		 List list=qry.list();
+		Criteria criteria = session.createCriteria(Branch.class);
+		List<Branch>list= (List<Branch>) criteria.list();
+		session.close();
 		return list;
+		
 	}
 
 	public int addBranch(Branch branch) {
@@ -63,7 +67,10 @@ public class BranchDaoImpl implements BranchInterface {
 		try {
 		 Branch branch1 = (Branch) session.get(Branch.class, branch.getName());
 		 if(branch1==null)
+			 {
+			 session.close();
 			 return 2;
+			 }
 		 branch1.setDetails1(branch.getDetails1());
 		 branch1.setDetails2(branch.getDetails2());
 		 branch1.setFieldName(branch.getFieldName());
@@ -88,7 +95,10 @@ public class BranchDaoImpl implements BranchInterface {
 		try {
 		 Branch branch1 = (Branch) session.get(Branch.class, branch.getName());
 		 if(branch1==null)
-			 return 2;
+		 {
+		 session.close();
+		 return 2;
+		 }
 		 session.delete(branch1);
 		 trans.commit();
 		} catch (Exception e) {
@@ -110,6 +120,7 @@ public class BranchDaoImpl implements BranchInterface {
 		Transaction trans=session.beginTransaction();
 		
 		 Branch branch1 = (Branch) session.get(Branch.class, name);
+		 session.close();
 		return branch1;
 	}
 
