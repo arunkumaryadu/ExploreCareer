@@ -14,51 +14,53 @@ import org.springframework.web.bind.annotation.RestController;
 import config.HibernateConfig;
 import dao.BranchDaoImpl;
 import model.Branch;
+import model.Field;
 import model.Subject;
+import service.BranchServiceImpl;
 import service.FieldServiceImpl;
 import service.SubjectServiceImpl;
 
 
 
 @RestController
-public class SubjectController {
+public class FieldController {
  @Autowired
-SubjectServiceImpl subjectService;
- 
+FieldServiceImpl fieldService;
+		 
+ @RequestMapping(value="/check/", method=RequestMethod.GET, headers="Accept=application/json")
+
  public @ResponseBody boolean checkConfiguration(){
 	 AnnotationConfigApplicationContext contex=new AnnotationConfigApplicationContext(HibernateConfig.class);
-	 subjectService=contex.getBean(SubjectServiceImpl.class);	
-	 boolean status = subjectService.checkConfiguration();
-	 System.out.println(subjectService.checkConfiguration());	  
+	 fieldService=contex.getBean(FieldServiceImpl.class);	
+	 boolean status = fieldService.checkConfiguration();
+	 System.out.println(fieldService.checkConfiguration());	  
   return status;
  }
-		 
 		 @RequestMapping(value="/subject/", method=RequestMethod.GET, headers="Accept=application/json")
-		 public @ResponseBody Subject showSubject(@RequestBody Subject subject) {
-		  Subject subjectobj = subjectService.showSubject(subject);
+		 public @ResponseBody Field showfield(@RequestBody Field field) {
+			 Field fieldobj = fieldService.showField(field);
 		  
-		  return subjectobj;
+		  return fieldobj;
 		 }
 		 
 		 @RequestMapping(value="/add/", method=RequestMethod.POST)
-		 public @ResponseBody Subject add(@RequestBody Subject subject){
-			 subjectService.addSubject(subject);
-		  return subject;
+		 public @ResponseBody Field add(@RequestBody Field field){
+			 fieldService.addField(field);
+		  return field;
 		 }
 		 
 		 @RequestMapping(value="/update/{name}", method=RequestMethod.PUT)
-		 public @ResponseBody Subject update(@PathVariable("name") String name, @RequestBody Subject subject){
-			 subject.setName(name);
+		 public @ResponseBody Field update(@PathVariable("name") String name, @RequestBody Field field){
+			 field.setFieldName(name);
 			
-			subjectService.updateSubject(subject);
-		  
-		  return subject;
+			 fieldService.updateField(field);
+		    return field;
 		 }
 		 
 		 @RequestMapping(value="/delete/{name}", method=RequestMethod.DELETE)
-		 public @ResponseBody Subject delete(@RequestBody Subject subject){
-			 subjectService.deleteSubject(subject);
-			return subject;
+		 public @ResponseBody Field delete(@RequestBody Field field){
+			 fieldService.deleteField(field);
+			return field;
 		  
 		 }	 
 	}
