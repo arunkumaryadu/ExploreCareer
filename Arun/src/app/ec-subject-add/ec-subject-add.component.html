@@ -1,0 +1,18 @@
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<label class="input-group-text" for="Class">Enter Subject Name</label>
+</div>
+<input formControlName="name">
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<label class="input-group-text" for="Stream">Enter Subject Details</label>
+</div>
+<input formControlName="details">
+</div>
+<button type="submit">Go</button>
+</form>
