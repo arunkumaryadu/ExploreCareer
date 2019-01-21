@@ -11,6 +11,8 @@ import dao.SubjectDaoImpl;
 import dao.UserDaoImpl;
 import model.Subject;
 @Service
+@Configuration
+@ComponentScan("dao") 
 public class SubjectServiceImpl implements SubjectInterface{
 	@Autowired
     private static SubjectDaoImpl objSubjectDaoImpl;
