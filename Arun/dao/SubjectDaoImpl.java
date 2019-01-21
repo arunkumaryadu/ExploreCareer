@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 import model.Subject;
 import service.SubjectInterface;
 @Repository
+@Configuration
+@ComponentScan("config") 
 public class SubjectDaoImpl implements SubjectInterface{
 
 	 @Autowired
