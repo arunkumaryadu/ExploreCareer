@@ -13,7 +13,9 @@ public class Subject {
 	 
 	 @Column(columnDefinition = "TEXT")
 	 private String details;
-
+         public Subject() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getName() {
 		return name;
 	}
