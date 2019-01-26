@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">ExploreCareer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="aboutus.html">About Us</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="StreamDetails.html">Streams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="CareerIn.html">Career In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="newsfeed.html">Newsfeed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="ReplyQuestion.html">Questions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="UserExperience.html">Share Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="AdminPost.html">Post Notice</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="addExpert.html">Add Expert</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="removeExpert.html">Remove Expert</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="login1.html">Logout </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="card">
+        <h5 class="card-header">Expert Registration</h5>
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <form [formGroup] = "formdata" (ngSubmit) = "onSubmit(formdata.value)" >
+                        
+                        <div class="form-group ">
+                            <label for="inputEmail4">Name</label>
+                            <input type="text" class="form-control" id="inputEmail4" formControlName = "userName" placeholder="ExpertName">
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label for="inputAddress">EmailId</label>
+                            <input type="text" class="form-control" id="inputemail"formControlName = "emailId" placeholder="xyz@gmail.com">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="passWord">Password</label>
+                            <input type="password" class="form-control" id="password"formControlName = "passWord" placeholder="Password">
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="inputAddress2">PhoneNumber</label>
+                            <input type="number" class="form-control" id="inputContact"formControlName = "phoneNumber" placeholder=" ContactNo">
+                        </div>
+                        <div class="form-group ">
+                            <label for="inputContact">ExpertIn</label>
+                            <select id="inputState" class="form-control" formControlName = "expertIn">
+                                <option selected>Choose...</option>
+                                <option>BE</option>
+
+                                <option>BCom</option>
+                                <option>MBBS</option>
+                                <option>BA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Salary</label>
+                            <input type="number" class="form-control" id="expertSalary"formControlName = "expertSalary" placeholder="expertSalary">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

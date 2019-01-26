@@ -1,0 +1,103 @@
+
+
+
+
+
+
+
+
+ <div *ngFor="let stream of streams">
+               
+
+   
+
+      <div class="card">
+          <h5 class="card-header">{{stream.streamName}}</h5>
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">{{stream.scope}}</p>
+            <div class="card">
+                <div class="card-header">
+                  Subject Details
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p  >
+
+                       
+                        <div class="card">
+                            <div class="card-header">
+                                {{stream.subject[0].name}}
+                            </div>
+                            <div class="card-body">
+                              <blockquote class="blockquote mb-0">
+                                <p>Indian Economic Development and Statistics these two are major divisions which you are going to study here. Knowing about the country’s economy rate and it’s developments over the years. You will also come across formulas, charts, theory, graphs in economics.</p>
+                                  </blockquote>
+                            </div>
+                          </div>
+
+                          <div class="card">
+                              <div class="card-header">
+                                  {{stream.subject[1].name}}
+                              </div>
+                              <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                  <p>The  curriculum for History is designed to introduce students to important historical sources. The syllabus is designed in a manner, so as to help students understand the process through which historians write history, by choosing and assembling different types of evidence, and by reading their sources critically. </p>
+                                       </blockquote>
+                              </div>
+                            </div>
+
+                      
+                  
+                    <footer class="blockquote-footer"> <cite title="Source Title"></cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              
+           <br/>
+            <a href=" {{stream.link}}" class="btn btn-primary">More Details</a>
+          </div>
+        </div>
+  </div>
+<!--
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="../assets/images/bg1.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+           
+      </div>
+    </div>
+  </div>
+
+<div *ngFor="let stream of streams">
+    
+
+
+
+
+
+</div>
+
+<div *ngFor="let stream of streams">
+  {{stream.streamName}}
+  
+  {{stream.link}}
+</div>
+<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+  <div class="card-body">
+<div class="row" *ngFor="let stream of streams">
+<div class="col-4">
+<div class="list-group" id="list-tab" role="tablist">
+  <a class="list-group-item list-group-item-action " id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">{{stream.name}}</a>
+  
+</div>
+</div>
+<div class="col-8">
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">{{stream.scope}} {{stream.link}}</div>
+  
+</div>
+</div>
+</div>  -->

@@ -1,0 +1,51 @@
+<div class="bg">
+<div class="container ">
+<div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header textbg textcolor">Branch Add</div>
+                            <div class="card-body">
+
+                                <form   [formGroup]="form" class="form-horizontal" (ngSubmit)="onSubmit(form.value)">
+
+                                    <div class="form-group">
+                                        <label for="name" class="cols-sm-2 control-label">Branch Name</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                               
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Branch Name" formControlName="name" required/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="details1" class="cols-sm-2 control-label">Branch Description</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                               
+                                                <input type="text" class="form-control" name="details1" id="details1" placeholder="Enter Branch details" formControlName="details1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label for="details2" class="cols-sm-2 control-label">More Branch Description</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                               
+                                                <input type="text" class="form-control" name="details2" id="details2" placeholder="Enter More Details" formControlName="details2"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group ">
+                                        <button type="submit"  class="btn btn-primary btn-lg btn-block login-button textbg textcolor">Add </button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+</div>
+</div>

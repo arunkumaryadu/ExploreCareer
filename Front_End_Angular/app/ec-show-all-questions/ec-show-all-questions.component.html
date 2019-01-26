@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ExploreCareer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+	   <li class="nav-item">
+        <a class="nav-link " href="aboutus.html">About Us</a>
+      </li> 
+	   <li class="nav-item ">
+        <a class="nav-link" href="StreamDetails.html">Streams</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link  " href="CareerIn.html">Career In</a>
+      </li> 
+	    <li class="nav-item">
+        <a class="nav-link  " href="newsfeed.html">Newsfeed</a>
+      </li> 
+	  <li class="nav-item">
+        <a class="nav-link  " href="ReplyQuestion.html">Questions</a>
+      </li> 
+	   <li class="nav-item">
+        <a class="nav-link  " href="UserExperience.html">Share Experience</a>
+      </li> 
+	   <li class="nav-item">
+        <a class="nav-link  " href="AdminPost.html">Post Notice</a>
+      </li> 
+	   <li class="nav-item">
+        <a class="nav-link  " href="addExpert.html">Add Expert</a>
+      </li> 
+	   <li class="nav-item">
+        <a class="nav-link  " href="removeExpert.html">Remove Expert</a>
+      </li> 
+	   <li class="nav-item">
+        <a class="nav-link  " href="login1.html">Logout </a>
+      </li>
+ 
+    </ul>
+    
+    
+  </div> 
+</nav>
+
+
+
+
+
+
+
+<div class="card">
+  <h5 class="card-header">Our Expert</h5>
+  <div class="card-body">
+  
+  
+  
+  <table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">userName</th>
+      <th scope="col">emailId</th>
+       <th scope="col">phoneNumber</th>
+      <th scope="col">expertSalary</th>
+	  <th scope="col">expertIn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td> <div *ngFor="let sub of experts">{{sub.userName}}</div></td>
+      <td> <div *ngFor="let sub of experts">{{sub.emailid}}</div></td>
+      <td> <div *ngFor="let sub of experts">{{sub.phoneNumber}}</div></td>
+      <td> <div *ngFor="let sub of experts">{{sub.userName}}</div></td>
+      <td> <div *ngFor="let sub of experts">{{sub.userName}}</div></td>
+	  <td><button type="button" class="btn btn-link">Remove</button></td>
+    </tr>
+    <!--<tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>CA</td>
+	  <td><button type="button" class="btn btn-link">Remove</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry </td>
+	  <td>Bird </td>
+      <td>Mbbs</td>
+	  <td><button type="button" class="btn btn-link">Remove</button></td>
+    </tr>-->
+  </tbody>
+</table>
+  
+    
+  </div>
+</div>
+
+<!--<div ng-controller="TempController">
+    <md-button  ng-click="toggle = !toggle" class='md-primary md-raised'> Click Me!!  </md-button>
+    <md-icon ng-if='toggle'>add</md-icon>
+    <md-icon ng-if='!toggle'>remove</md-icon>
+   </div> -->
+
+<!--
+  </body>
+  </html>
+-->
+<!--
+<form>
+  <div *ngFor="let sub of questions">{{sub.id}}</div>
+</form>
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="mat-elevation-z8">
+    <table mat-table []="">
+  
+      <!-- Position Column --
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let sub of experts"> {{expert.id}} </td>
+      </ng-container>
+  
+      <!-- Name Column --
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- Weight Column --
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column --
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
+
+  <!-- <form>
+  <div *ngFor="let sub of experts">{{sub.userName}}</div>
+</form>---->

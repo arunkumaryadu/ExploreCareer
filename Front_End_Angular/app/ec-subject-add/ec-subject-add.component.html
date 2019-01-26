@@ -1,0 +1,43 @@
+<div class="bg">
+<div class="container">
+    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header textbg textcolor">Subject Add</div>
+                                <div class="card-body">
+    
+                                    <form   [formGroup]="form" class="form-horizontal" (ngSubmit)="onSubmit(form.value)">
+    
+                                        <div class="form-group">
+                                            <label for="name" class="cols-sm-2 control-label  ">Subject Name</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">
+                                                   
+                                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Subject Name" formControlName="name" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="details1" class="cols-sm-2 control-label">Subject Details</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">
+                                                   
+                                                    <input type="text" class="form-control" name="details1" id="details1" placeholder="Enter Subject details" formControlName="details" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group ">
+                                            <button type="submit"  class="btn btn-primary btn-lg btn-block login-button textbg textcolor">Add </button>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    
+    
+</div>

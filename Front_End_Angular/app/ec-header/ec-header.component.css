@@ -1,0 +1,10 @@
+nav{
+    background-color: #004466;
+    
+}
+.textcolor {
+    color: #ffc266;
+}
+.navbar-nav > li > .dropdown-menu  {
+    background-color: #132639;
+}

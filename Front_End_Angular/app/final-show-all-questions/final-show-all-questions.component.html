@@ -1,0 +1,9 @@
+<h2>All Questions</h2>
+<ul class="questions">
+  <li *ngFor="let questionasked of questions">
+    <a routerLink="/UpdateQuestions/:{{questionasked.id}}">
+      <span class="badge">{{questionasked.id}}</span> {{questionasked.question}}
+     
+    </a>
+  </li>
+</ul>

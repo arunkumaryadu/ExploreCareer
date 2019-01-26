@@ -1,0 +1,17 @@
+
+.text{
+color: #000000;
+}
+.ulbg{
+    background-color: #000000;
+}
+nav{
+    background-color: #004466;
+    
+}
+.textcolor {
+    color: #ffc266;
+}
+.navbar-nav > li > .dropdown-menu  {
+    background-color: #132639;
+}

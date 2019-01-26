@@ -1,0 +1,50 @@
+
+    <br/>
+    <div class="row">
+      
+        <div class="col-sm"></div>
+        <div class="card-body">
+        <div class="col-sm">
+        <label for="exampleInputEmail1">Select Field</label>
+        <form [formGroup]="formdata" (ngSubmit)="onSubmit(formdata.value)">
+            <div class="input-group">
+
+                <select class="custom-select" id="inputGroupSelect04" formControlName="relatedAreaOfQuestion" aria-label="Example select with button addon">
+                    <option selected>Choose...</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="MBBS">MBBS</option>
+                    <option value="Photography">Photography</option>
+                </select>
+                <!-- <div class="input-group-append">
+                <button class="btn btn-primary" type="button">More Details</button>
+                </div>
+                -->
+            </div>
+            <br/>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <p class="card-text">abcd</p>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Ask Question</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="question" rows="3"></textarea>
+                            </div>
+                            <p></p>
+                            <input type="submit" class="forsubmit" value="ASK">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+    <div class="col-sm"></div>
+    </div>
+  <!--  <p>
+        Email entered is : {{formdata}}
+    </p>-->
