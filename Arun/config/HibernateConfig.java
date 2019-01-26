@@ -34,7 +34,7 @@ public class HibernateConfig {
 	  ds.setDriverClassName("com.mysql.jdbc.Driver");
 	  ds.setUrl("jdbc:mysql://localhost:3306/exploreCareerDb");
 	  ds.setUsername("root");
-	  ds.setPassword("arundb");	  
+	  ds.setPassword("yourDbPassword");	  
 	  return ds;
 	 }
 	 
