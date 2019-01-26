@@ -20,7 +20,7 @@
   </dependency>
     
     
-    <!-- mysql dependency -->
+    <!-- mysql dependency 
  
   <dependency>
     <groupId>mysql</groupId>
@@ -119,7 +119,7 @@
   </dependency>
   
   
-  <!-- dependency for hibernate -->
+  <!-- dependency for hibernate --
   <!-- 
   <dependency>
             <groupId>org.hibernate</groupId>
