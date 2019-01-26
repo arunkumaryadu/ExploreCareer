@@ -4,3 +4,8 @@ Admin access the modules such as post notice, add or remove expert and such deta
 It’s the Admin who decides to what notices should be post regarding the new courses introduced, entrance exams notifications, scholarship notifications.
 User need to register in order to login and access the inner modules. After registration the user can access the modules like ask questions and will get its own profile and user can see the previously asked questions by other users . The questions asked by user will be answered by the expert in that field. 
 Without login user will not be able to ask the expert any questions, will not be able to see the detailed information of all the fields.
+
+
+
+We created the Explore Career Site  with the students's perspective in mind. We wanted to offer a platform that would help students to choose their career, by providing all the future options available for them based on their highest qualification.
+The website contains detailed information of all the available courses offered by various institutes with their course contents scope and entrance exams.
